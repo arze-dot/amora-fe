@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+
+# Check Commit Message
+echo '-------------------------------'
+echo '🏂🏼 Checking Commit Message...'
+echo '-------------------------------'
+
+npx --no-install commitlint --edit
+echo '✅ Valid commit message format'
+
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
