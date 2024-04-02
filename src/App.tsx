@@ -4,6 +4,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <head>
+        <title>Amora Real Estate</title>
+        <meta name="description" content="Amora Real Estate" />
+        {/* Other metadata tags */}
+      </head>
       <main className="flex min-h-screen flex-col items-center justify-between">
         {/* Hero */}
         <div
