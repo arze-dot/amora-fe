@@ -1,11 +1,11 @@
-import CE_Table from "./$element/client.table";
+import SE_Table from "./$element/server.table";
 
 export default async function Home() {
     return (
         <div>
             Admin
 
-            <CE_Table />
+            <SE_Table />
         </div>
     )
 }
