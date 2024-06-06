@@ -1,6 +1,7 @@
 'use server'
 
 import CE_Button from "@/app/$element/client.button";
+import CE_Pagination from "./client.pagination";
 
 export default async function SE_Table() {
 
@@ -112,62 +113,67 @@ export default async function SE_Table() {
 
 
     return (
-        <div className={
-            "relative flex w-full justify-between " +
-            "border rounded-[10px]  " +
-            "overflow-auto"
-        } >
-            {
-                pickData.map((item, index) => {
-                    return (
-                        <>
-                            <div className="flex flex-col text-sm text-center flex-shrink-0 ">
-                                <span className="flex items-center justify-center h-[52px] p-[12px] flex-shrink-0 bg-[#F8F9F9]">
-                                    {item.title}
-                                </span>
-
-
-                                {
-                                    data.map((itm, idx) => {
-
-                                        const value = itm[item.selector as keyof typeof itm]
-                                        return (
-                                            <div className="flex items-center h-[52px] p-[12px]  odd:bg-[#F8F9F9] flex-shrink-0 ">
-                                                <span >
-                                                    {value}
-                                                </span>
-                                            </div>
-
-                                        )
-                                    })
-                                }
-                            </div>
-                            <div className="flex flex-col text-sm text-center w-full">
-                                {Array(data?.length ? data?.length + 1 : 1).fill('').map((_, itemIdx) => (
-                                    <div key={itemIdx} className="flex w-full items-center h-[52px] odd:bg-[#F8F9F9]" />
-                                ))}
-                            </div>
-                        </>
-                    )
-                })
-            }
-            <div className="sticky right-0 flex flex-col text-sm text-center w-fit flex-shrink-0">
-                <span className="flex items-center justify-center h-[52px] p-[12px] bg-[#F8F9F9]">
-                    Aksi
-                </span>
+        <div className="w-full">
+            <div className={
+                "flex w-full justify-between " +
+                "border rounded-[10px]  " +
+                "overflow-auto"
+            } >
                 {
-                    data?.map((item, itemIdx) => {
+                    pickData.map((item, index) => {
                         return (
-                            <div className="flex items-center h-[52px] p-[12px]  odd:bg-[#F8F9F9] flex-shrink-0 ">
-                                <CE_Button type='button'>Testing</CE_Button>
-                                <CE_Button type='button'>Testing</CE_Button>
-                            </div>
+                            <>
+                                <div className="flex flex-col text-sm text-center flex-shrink-0 ">
+                                    <span className="flex items-center justify-center h-[52px] p-[12px] flex-shrink-0 bg-[#F8F9F9]">
+                                        {item.title}
+                                    </span>
+
+
+                                    {
+                                        data.map((itm, idx) => {
+
+                                            const value = itm[item.selector as keyof typeof itm]
+                                            return (
+                                                <div className="flex items-center h-[52px] p-[12px]  odd:bg-[#F8F9F9] flex-shrink-0 ">
+                                                    <span >
+                                                        {value}
+                                                    </span>
+                                                </div>
+
+                                            )
+                                        })
+                                    }
+                                </div>
+                                <div className="flex flex-col text-sm text-center w-full">
+                                    {Array(data?.length ? data?.length + 1 : 1).fill('').map((_, itemIdx) => (
+                                        <div key={itemIdx} className="flex w-full items-center h-[52px] odd:bg-[#F8F9F9]" />
+                                    ))}
+                                </div>
+                            </>
                         )
                     })
                 }
+                <div className="sticky right-0 flex flex-col text-sm text-center w-fit flex-shrink-0">
+                    <span className="flex items-center justify-center h-[52px] p-[12px] bg-[#F8F9F9]">
+                        Aksi
+                    </span>
+                    {
+                        data?.map((item, itemIdx) => {
+                            return (
+                                <div className="flex items-center h-[52px] p-[12px] border-l even:bg-white odd:bg-[#F8F9F9] flex-shrink-0 ">
+                                    <CE_Button type='button'>Edit</CE_Button>
+                                    <CE_Button type='button'>Delete</CE_Button>
+                                </div>
+                            )
+                        })
+                    }
 
-            </div>
+                </div>
 
-        </div >
+
+            </div >
+            <CE_Pagination />
+        </div>
+
     )
 }

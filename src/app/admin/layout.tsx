@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
 import { menu } from "../constant/menu";
+import CE_Header from "./$element/client.header";
 
 export default function DashboardLayout({
     children
 }: { children: ReactNode }) {
     return (
-        <div className="max-w-screen max-h-screen flex items-start justify-start">
+        <div className="w-screen max-h-screen flex items-start justify-start overflow-x-hidden">
             {/* Sidebar */}
-            <section className="w-[350px] max-w-[350px] border-r h-screen ">
+            <section className="w-[300px] min-w-[300px] max-w-[300px] border-r h-screen hidden lg:block ">
                 <div className="h-[70px] w-full flex items-center justify-center font-bold border-b px-9">
                     AMORA DASHBOARD
                 </div>
@@ -32,7 +33,7 @@ export default function DashboardLayout({
                         Admin
                     </div>
                 </section>
-                <div className="w-full p-5">
+                <div className="w-full p-5 overflow-x-auto">
                     {children}
                 </div>
             </div>
