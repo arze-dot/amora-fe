@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import { menu } from "../constant/menu";
-import CE_Header from "./$element/client.header";
+import ACT_LOGOUT from "./$action/action.logout";
+import CE_BtnLogout from "./$element/client.button.logout";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function DashboardLayout({
     children
@@ -26,12 +28,10 @@ export default function DashboardLayout({
             <div className="flex flex-col items-start justify-start w-full">
                 {/* Navbar  */}
                 <section className="w-full h-[70px] border-b flex items-center justify-between px-4">
-                    <div>
-                        SHOW
+                    <div className="cursor-pointer">
+                        <Icon fontSize={30} icon="mdi:hamburger-open" />
                     </div>
-                    <div>
-                        Admin
-                    </div>
+                    <CE_BtnLogout />
                 </section>
                 <div className="w-full p-5 overflow-x-auto">
                     {children}

@@ -1,4 +1,4 @@
-interface IRq_Login {
+export interface IRq_Login {
     username: string,
     password: string
 }
@@ -21,5 +21,4 @@ export async function APIS_Login(prop: IRq_Login) {
         res.json()
     ).then(res => res).catch(err => err)
     return data
-
 }
