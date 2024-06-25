@@ -8,7 +8,7 @@ interface IRs_Login {
 }
 
 export async function APIS_Login(prop: IRq_Login) {
-    const data: any = await fetch('https://api-amora.mahesamegahmandiri.com/api/login', {
+    const data: any = await fetch(process.env.SERVER_API + '/login', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"

@@ -3,7 +3,7 @@ type Menu = {
     path: string;
 }
 
-export const menu:Menu[] = [
+export const menu: Menu[] = [
     {
         title: 'Dashboard',
         path: '/admin'
@@ -14,7 +14,7 @@ export const menu:Menu[] = [
     },
     {
         title: 'Housing',
-        path: '/housing'
+        path: '/admin/housing'
     },
     {
         title: 'Unit',

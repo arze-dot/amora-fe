@@ -3,6 +3,7 @@ import { menu } from "../constant/menu";
 import ACT_LOGOUT from "./$action/action.logout";
 import CE_BtnLogout from "./$element/client.button.logout";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Link from "next/link";
 
 export default function DashboardLayout({
     children
@@ -18,7 +19,7 @@ export default function DashboardLayout({
                     {
                         menu.map((item, index) => {
                             return (
-                                <div className="w-full cursor-pointer py-2 px-3 border rounded-md hover:bg-slate-200 " key={index}>{item.title}</div>
+                                <Link className="w-full cursor-pointer py-2 px-3 border rounded-md hover:bg-slate-200 " key={index} href={item.path}>{item.title}</Link>
                             )
                         })
                     }
